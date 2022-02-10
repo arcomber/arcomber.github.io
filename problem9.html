@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>C++ Problem 9</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Problem 9</h1>
+
+    <p>Re-write the average function below using the std library.</p>
+
+<pre>
+<code>
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+
+// for input 1,2,3,4,5 then 1+2+3+4+5+6/5 == 1/5 + 2/5 + 3/5 + 4/5 + 5/5
+double average(const double* array, int length)
+{
+    double average{ 0 };
+    for (int i = 0; i < length; ++i)
+    {
+        average += array[i] / length;
+    }
+    return average;
+}
+
+int main() {
+    const double array[]{ 1.0,2.0,3.0,4.0,5.0 };
+    const int size = sizeof(array) / sizeof(array[0]);
+    std::cout << "average value of array: " << average(array, size) << std::endl;
+}
+</code>
+</pre>
+
+   <a href="problem10.html">problem 10</a><br>
+
+  </body>
+</html>

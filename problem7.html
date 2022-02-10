@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>C++ Problem 7</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Problem 7</h1>
+
+    <p>Re-write this concatenate function using the std library.</p>
+<pre>
+<code>
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+
+std::string concatenate(std::vector&lt;std::string&gt; lines) {
+
+  std::string concatenated;
+  for (auto& line : lines) {
+    concatenated += line;
+  }
+  return concatenated;
+}
+
+int main() {
+    const std::vector&lt;std::string&gt; array {"student1","student2", "student3", "student4", "student5"};
+  std::cout << "concatenation of array: " << concatenate2(array) << std::endl;
+}
+</code>
+</pre>
+
+   <a href="problem8.html">problem 8</a><br>
+
+  </body>
+</html>

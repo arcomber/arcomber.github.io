@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>C++ Problem 1</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Problem 1</h1>
+
+<p>Re-write the code below using a suitable standard library function</p>
+    
+<pre>
+<code>
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+bool exists(const int* array, const int length, int value) {
+    bool found{false};
+    for (int i = 0; i < length; ++i) {
+        if (array[i] == value) {
+            found = true;
+            break;
+        }
+    }
+    return found;
+}
+
+int main() {
+    const int array[] {1,2,3,4,5};
+    const size_t size = sizeof(array) / sizeof(array[0]);
+    const int findme = 3;
+    std::cout << "value: " << findme << (exists2(array, size, findme) ? " exists" : " does not exist") << " in array\n";
+}
+</code>
+</pre>
+    
+   <a href="problem2.html">problem2</a><br>
+
+  </body>
+</html>

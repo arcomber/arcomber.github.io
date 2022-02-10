@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Print utility function</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Print Utility</h1>
+
+<p>In problem 5, you used templates to pass in iterators of any type.  That provides a great deal of flexibility.  You can use this exists function with any sequence of data.</p>
+
+<p>When we go further with these stdlib problems, it would be really useful to call a print function to print the elements of a container.  And we can use the familiar the pattern used by the standard library using the begin and end pattern for our print function.</p>
+
+<p>This function below uses templated types similar to the exists version you created for problem 5.  Note that for the first parameter to std::ostream_iterator, the type is obtained using iterator_traits.</p>
+
+<pre>
+<code>
+template &lt;typename iter&gt;
+void print(iter begin, iter end) {
+  using value_type = typename std::iterator_traits&lt;iter&gt;::value_type;
+  std::copy(begin, end,
+     std::ostream_iterator&lt; value_type &gt;(std::cout, "\t"));
+}
+</code>
+</pre>
+    
+    
+   <a href="problem6.html">problem 6</a><br>
+
+  </body>
+</html>
